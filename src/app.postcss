@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+html,
+body {
+	@apply h-full overflow-hidden;
+}
+
+.gradient-heading {
+	@apply bg-clip-text text-transparent box-decoration-clone;
+	/* Direction */
+	@apply bg-gradient-to-br;
+	/* Color stops */
+	@apply from-primary-500 to-secondary-500;;
+	
+	text-shadow: 0 0 5px rgba(255, 53, 18, 0.459); 
+}
+
+@layer utilities {
+	.animation-delay-2000{
+		animation-delay: 2s;
+	}
+	.animation-delay-4000{
+		animation-delay: 4s;
+	}
+
+	.side-line .card::after {
+    	@apply absolute h-20 w-1 left-[-1px] bg-gradient-to-b from-transparent via-primary-500 to-transparent opacity-0 transition-all duration-500 ease-in-out;
+    	top: 65%;
+    	content: "";
+  	}
+  	.side-line .card:hover::after {
+    	top: 25%;
+    	opacity: 1;
+  	}
+}
+
+/* font used */
+@font-face {
+	font-family: 'PoppinsBlack';
+	src: url('/fonts/Poppins-Black.ttf');
+} 
+
+@font-face {
+	font-family: 'PoppinsExtraLight';
+	src: url('/fonts/Poppins-ExtraLight.ttf');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'PoppinsLight';
+	src: url('/fonts/Poppins-Light.ttf');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'PoppinsMedium';
+	src: url('/fonts/Poppins-Medium.ttf');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'PoppinsRegular';
+	src: url('/fonts/Poppins-Regular.ttf');
+	font-display: swap;
+} 
